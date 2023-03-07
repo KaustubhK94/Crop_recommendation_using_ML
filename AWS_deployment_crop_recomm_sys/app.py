@@ -3,7 +3,9 @@ import pickle
 import numpy as np
 
 model = pickle.load(open("crop_recommendation_classifier.pkl","rb"))
-app = Flask(__name__,template_folder="C:/Users/kaustubh kapare/PycharmProjects/pythonProject4/templates/")
+### IF you encounter with an error like jinja2.templatenotfound please specify template folder argument while creating flask instance
+### and mention the path where template is stored
+app = Flask(__name__)
 
 @app.route('/')
 def index():
@@ -23,6 +25,6 @@ def crop_recommend():
     return render_template("index.html", result=result)
     # return result
 if __name__=="__main__":
-    app.run(host='0.0.0.0', port=8080)
-    # app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080) ### use this while deploying your model on AWS
+    # app.run(debug=True) ### uncomment this when you want to see how it works whne your hosting it on local server while commenting out the line 29 above..
 
