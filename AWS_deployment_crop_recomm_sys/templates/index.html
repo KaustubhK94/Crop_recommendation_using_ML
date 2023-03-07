@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Recommendation System</title>
+</head>
+<body>
+    <h1>Crop Recommendation System</h1>
+    <form method="post" action="/predict">
+
+        <label>Nitrogen</label><br>
+        <input type="text" name="Nitrogen"><br><br>
+
+        <label>Phosphorous</label><br>
+        <input type="text" name="Phosphorous"><br><br>
+
+        <label>Potassium</label><br>
+        <input type="text" name="Potassium"><br><br>
+
+        <label>Temperature</label><br>
+        <input type="text" name="Temperature"><br><br>
+
+        <label>Humidity</label><br>
+        <input type="text" name="Humidity"><br><br>
+
+        <label>pH</label><br>
+        <input type="text" name="pH"><br><br>
+
+        <label>Rainfall</label><br>
+        <input type="text" name="Rainfall"><br><br>
+
+        <input type="submit" value="Predict"><br><br>
+
+
+        {% if result %}
+            <p>{{result}}</p>
+        {% endif %}
+    </form>
+</body>
+</html>
